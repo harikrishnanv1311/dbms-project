@@ -42,6 +42,10 @@ Below are the documents validated by the guiding faculty, **Dr. Mamatha H. R.**
 
 * User requirements
 
+![Validated User Requirements](/val_user_requirements.jpg)
+
 * ER diagram
+
+![Validated User Requirements](/val_er_diagram.jpg)
 
 * Relational schema
