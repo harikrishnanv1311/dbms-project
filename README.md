@@ -32,9 +32,11 @@ teacher if the need arises.
 
 ## Entity-Relationship Diagram for The Database
 
-![ER Diagram](/ER_diagram.jpg)
+![ER Diagram](images/ER_diagram.jpg)
 
 ## Relational Schema for The Database
+
+![Relational schema](/images/relational_schema.jpg)
 
 ## Validated Documents
 
@@ -42,10 +44,12 @@ Below are the documents validated by the guiding faculty, **Dr. Mamatha H. R.**
 
 * User requirements
 
-![Validated User Requirements](/val_user_requirements.jpg)
+![Validated User Requirements](/images/val_user_requirements.jpg)
 
 * ER diagram
 
-![Validated User Requirements](/val_er_diagram.jpg)
+![Validated ER diagram](/images/val_er_diagram.jpg)
 
 * Relational schema
+
+![Validated Relational schema](/images/val_relational_schema.jpg)
