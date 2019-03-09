@@ -1,0 +1,10 @@
+.container{
+padding:10px;
+margin:10px;
+}
+.gap{
+	margin:100px;
+	border:100px;
+	padding:100px;
+	display:inline-block;
+}
