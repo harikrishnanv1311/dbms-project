@@ -2,6 +2,12 @@
 
 A simple project which uses a database to store all the various timetables of a college/university and also provides a web interface for students or lecturers to use. Uploaded pictures of validated documents [below](#validated-documents).
 
+## Team Details
+
+* Harikrishnan V - PES1201700155
+* Prithvi MK - PES1201700142
+* Abhaay S - PES1201701554
+
 ## User Requirements
 
 * The college has many departments, each of which have
