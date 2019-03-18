@@ -10,7 +10,7 @@
 </head>
 <body>
 		<nav class="navbar navbar-expand-md navbar-light bg-light shadow">
-			<a href="index.php"><img src="pesu.png" class="col-lg-2" style="display:block;"></a>
+			<a href="index.php"><img src="pesu.png" class="img-fluid" style="width:15%;height: auto;"></a>
 			<a class="navbar-brand ml-auto text-secondary" href="index.php"><h3>TIMETABLE MANAGEMENT</h3></a>
         </nav>
 

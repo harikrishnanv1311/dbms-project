@@ -11,7 +11,7 @@
 
 <body>
 		<nav class="navbar navbar-expand-md navbar-light bg-light shadow">
-			<a href="index.php"><img src="pesu.png" class="col-sm-2"></a>
+			<a href="index.php"><img src="pesu.png" class="img-fluid" style="width:10%;height: auto;"></a>
 			<a class="navbar-brand ml-auto text-secondary" href="index.php"><h3>TIMETABLE MANAGEMENT</h3></a>
         </nav>
 	<div class="container">
@@ -36,7 +36,7 @@
 
 				//Need to enter database name, username and password
 				
-				$db_connection = pg_connect("host='localhost' port='5432' dbname='' user='' password=''") or die("unable to connect to database");
+				$db_connection = pg_connect("host='localhost' port='5432' dbname='timetable_management' user='root' password='root	'") or die("unable to connect to database");
 				$query = "SELECT sem as SEM, section as SECTION, room_no as ROOM_NO, pno as PERIOD, start_time as START_TIME, end_time as END_TIME FROM assign_to WHERE initials = '$initials' AND assign_to.day = '$day'";
 				$result = pg_query($query);
 				
