@@ -1,6 +1,6 @@
 # Timetable Management Application
 
-A simple project which uses a database to store all the various timetables of a college/university and also provides a web interface for students or lecturers to use. Uploaded pictures of validated documents [below](#validated-documents).
+A simple project which uses a database to store all the various timetables of a college/university and also provides a web interface for students and lecturers to use. A department project carried out under **Dr. Mamatha H. R.**
 
 ## Team Details
 
@@ -43,19 +43,3 @@ teacher if the need arises.
 ## Relational Schema for The Database
 
 ![Relational schema](Phase-1/images/relational_schema.jpg)
-
-## Validated Documents
-
-Below are the documents validated by the guiding faculty, **Dr. Mamatha H. R.**
-
-* User requirements
-
-![Validated User Requirements](Phase-1/images/val_user_requirements.jpg)
-
-* ER diagram
-
-![Validated ER diagram](Phase-1/images/val_er_diagram.jpg)
-
-* Relational schema
-
-![Validated Relational schema](Phase-1/images/val_relational_schema.jpg)
