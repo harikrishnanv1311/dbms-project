@@ -43,3 +43,21 @@ teacher if the need arises.
 ## Relational Schema for The Database
 
 ![Relational schema](Phase-1/images/relational_schema.jpg)
+
+## Web Interface
+
+* Home page of the web inteface
+  
+  ![Home](Phase-2/screenshots/index.jpg)
+
+* Lecturer's timetable for particular date
+  
+  ![Particular Date](Phase-2/screenshots/particular_timetable.jpg)
+
+* Lecturer's full timetable for the week
+
+  ![Full Timetable](Phase-2/screenshots/full_timetable.jpg)
+
+* Lecturer's free slots for the week
+
+  ![Free Slots](Phase-2/screenshots/free_slots.jpg)
