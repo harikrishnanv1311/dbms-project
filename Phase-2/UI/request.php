@@ -41,7 +41,7 @@
 				//echo '</h1><br>';
 				//Need to enter database name, username and password
 				
-				$db_connection = pg_connect("host='localhost' port='5432' dbname='timetable_management' user='root' password='root'") or die("unable to connect to database");				
+				$db_connection = pg_connect("host='localhost' port='5432' dbname='' user='' password=''") or die("unable to connect to database");				
 				
 				function print_timetable($result)
 				{	
