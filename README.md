@@ -4,6 +4,8 @@ A simple project which uses a database to store all the various timetables of a 
 
 ## Team Details
 
+**Section A**
+
 * Harikrishnan V - PES1201700155
 * Prithvi MK - PES1201700142
 * Abhaay S - PES1201701554
