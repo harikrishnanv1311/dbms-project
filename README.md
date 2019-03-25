@@ -63,3 +63,31 @@ teacher if the need arises.
 * Lecturer's free slots for the week
 
   ![Free Slots](Phase-2/screenshots/free_slots.jpg)
+
+## How to Execute the Web Interface
+
+* Clone the repository into your system using the command -
+
+    ```shell
+    $git clone https://github.com/pmk21/dbms-project.git
+    ```
+
+* Start **PostgreSQL** and **XAMPP** on your computer.
+  
+* Open PostgreSQL terminal, and create a new database by typing -
+
+  ```sql
+  CREATE DATABASE db_name;  
+  ```
+
+* Load the `tt_manage.sql` file provided in `Phase-2` folder into PostgreSQL using the command -
+
+    ```shell
+    $psql -U your_username db_name < tt_manage.sql
+    ```
+
+* Copy the `UI` folder into the XAMPP `htdocs` folder.
+  
+* Make sure to set the `dbname`, `user` and `password` parameters in the `pg_connect` function in the `request.php` file.
+
+* Access the `index.php` file by typing `localhost/UI/index.php` in your preferred browser(recommended **Chrome**).
