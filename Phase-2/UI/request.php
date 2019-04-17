@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>PES University|Timetable Management System</title>
@@ -10,39 +11,49 @@
 </head>
 
 <body>
+	
 		<nav class="navbar navbar-default navbar-light bg-light shadow">
 			<a href="index.php"><img src="pes_logo.png" class="img-fluid"></a>
 			<a class="navbar-brand ml-auto text-secondary" href="index.php"><h3>TIMETABLE MANAGEMENT</h3></a>
         </nav>
-	<div class="container">
+	
+	<div class="container pt-5">
 		
 			<?php
 				
-				//echo '<h1 class="pt-5">';
-				
+				//Converting initials to caps and little bit of string formatting
 				if(isset($_POST["initials"]))
 				{
 					$initials = strtoupper($_POST["initials"]);
 					
+					//In database Doctor is present as Dr
 					if (strpos($initials, "DR") !== false)
 					{
 						$str_arr = explode('.', $initials);
 						$str_arr[0] = "Dr";
 						$initials = implode(".", $str_arr);
 					}
+
 				}
 
+				//Converts date to day
 				if(isset($_POST["date"]))
 				{
 					$date = strtotime($_POST["date"]);
 					$day = date("l", $date);
 				}
 				
-				//echo '</h1><br>';
 				//Need to enter database name, username and password
 				
-				$db_connection = pg_connect("host='localhost' port='5432' dbname='' user='' password=''") or die("unable to connect to database");				
+				$DATABASE_HOST = 'localhost';
+                $DATABASE_USER = 'root';
+                $DATABASE_PASS = 'root';
+                $DATABASE_NAME = 'timetable_management';
+                
+				$db_connection = pg_connect("host='$DATABASE_HOST' port='5432' dbname='$DATABASE_NAME' user='$DATABASE_USER' password='$DATABASE_PASS'") or die("unable to connect to database");
 				
+				$initials = pg_escape_string($db_connection, $initials);
+
 				function print_timetable($result)
 				{	
 					if (pg_num_rows($result) > 0)
@@ -114,7 +125,66 @@
 					$result = pg_query($query);
 					print_timetable($result);
 				}
+				
+				elseif (isset($_POST['class_vacancy'])) 
+				{
+				
+					$start_times = array('08:15', '09:15', '10:45', '11:45', '13:30', '14:30'); 	
+					$end_times = array('09:15', '10:15', '11:45', '12:45', '14:30', '15:30');
 					
+					$start_time = $start_times[((int)$_POST["gridRadios"])-1];
+					$end_time = $end_times[((int)$_POST["gridRadios"])-1];
+
+					$query = "SELECT room_no FROM sem_class WHERE room_no NOT IN (SELECT room_no FROM assign_to WHERE start_time='$start_time' AND end_time='$end_time' AND day='$day');";
+					
+					$result = pg_query($query);
+					
+					if (pg_num_rows($result) > 0)
+					{	
+						echo '<h1 class="pt-5">Classes Free</h1>';
+
+						echo '<table class="table table-hover table-responsive table-striped">
+								<thead>
+								<tr>
+								<th>Classes</th></tr></thead>';
+						while ($row = pg_fetch_row($result))
+							{
+								echo '<tr><td>'.$row[0].'</td></tr>';
+							}
+						echo '</table>';
+					}
+					else
+					{
+						echo '<h1 class="jumbotron text-center">No classes free</h1>';
+					}
+				}
+				elseif (isset($_POST['find_lecturer']))
+				{
+
+					$start_times = array('08:15', '09:15', '10:45', '11:45', '13:30', '14:30'); 	
+					$end_times = array('09:15', '10:15', '11:45', '12:45', '14:30', '15:30');
+					
+					$start_time = $start_times[((int)$_POST["gridRadios"])-1];
+					$end_time = $end_times[((int)$_POST["gridRadios"])-1];
+
+					$query = "SELECT room_no, sem, section FROM assign_to WHERE initials='$initials' AND start_time='$start_time' AND end_time='$end_time' AND day='$day';";
+					$result = pg_query($query);
+
+					if (pg_num_rows($result) > 0)
+					{	
+
+						while ($row = pg_fetch_row($result))
+							{
+								echo "<h2 class='alert alert-info'>$initials is currently taking a class for semester ".$row[1]." section ".$row[2]." in room <strong>".$row[0]."</strong>.</h2>";
+							}
+					}
+					else
+					{
+						echo '<h2 class="alert alert-info text-center">The lecturer doesn\'t have any class right now!</h2>';
+					}
+
+				}
+
 				echo '<br/>';
 
 				pg_close($db_connection);
@@ -122,11 +192,11 @@
 			?>
 		
 		<a href="index.php"><button class="btn btn-primary">Go Back</button></a>
+		
 		<footer class="footer">
 			<p><center>Copyright &COPY; PES University. All Rights Reserved | Contact Us: +91 90000 00000</center></p>
 		</footer>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	
+
 	</div>
 </body>
 </html>

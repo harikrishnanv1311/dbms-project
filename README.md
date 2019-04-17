@@ -4,7 +4,7 @@ A simple project which uses a database to store all the various timetables of a 
 
 ## Team Details
 
-**Section A**
+### Section A
 
 * Harikrishnan V - PES1201700155
 * Prithvi MK - PES1201700142
@@ -63,6 +63,14 @@ teacher if the need arises.
 * Lecturer's free slots for the week
 
   ![Free Slots](Phase-2/screenshots/free_slots.jpg)
+
+* Find an empty class
+
+  ![Class Vacancy](Phase-2/screenshots/class_vacancy.jpg)
+
+* Find whether a lecturer has class or not
+  
+  ![Find Lecturer](Phase-2/screenshots/find_lecturer.jpg)
 
 ## How to Execute the Web Interface
 
